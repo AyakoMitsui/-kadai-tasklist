@@ -4,25 +4,29 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTitleToTasksTable extends Migration
+class AddTasksTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-     public function up()
+    public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->string('title');
+            $table->string('status');
         });
     }
 
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropColumn('title');
+            $table->dropCoulm('status');
         });
     }
 }
